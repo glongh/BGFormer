@@ -929,7 +929,7 @@ class AerialBezierGraphDataset(Dataset):
     def get(self, idx):
         """Get the data at the given index."""
         processed_path = self.processed_paths[idx]
-        data = torch.load(processed_path)
+        data = torch.load(processed_path, weights_only=False)
         return data
 
     def get_max_num_nodes_and_index(self):
